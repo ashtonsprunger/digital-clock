@@ -123,7 +123,9 @@ const numbers = [
     [2, 4],
   ],
 ];
-let size = document.documentElement.clientWidth / 29;
+let size = Math.floor(document.documentElement.clientWidth / 29);
+let leftOffset =
+  ((document.documentElement.clientWidth / 29 - size) * 15) / size;
 let topOffset = document.documentElement.clientHeight / 2 / size - 3;
 
 let hour = 0;
@@ -135,11 +137,11 @@ function setup() {}
 function game() {
   clear();
   updateCurrentTime();
-  drawNumber(hour, 1, topOffset);
-  drawColon(9, topOffset);
-  drawNumber(min, 11, topOffset);
-  drawColon(19, topOffset);
-  drawNumber(sec, 21, topOffset);
+  drawNumber(hour, 1 + leftOffset, topOffset);
+  drawColon(9 + leftOffset, topOffset);
+  drawNumber(min, 11 + leftOffset, topOffset);
+  drawColon(19 + leftOffset, topOffset);
+  drawNumber(sec, 21 + leftOffset, topOffset);
 }
 
 const updateCurrentTime = () => {
