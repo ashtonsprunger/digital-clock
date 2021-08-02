@@ -126,7 +126,9 @@ const numbers = [
 let size = Math.floor(document.documentElement.clientWidth / 29);
 let leftOffset =
   ((document.documentElement.clientWidth / 29 - size) * 15) / size;
-let topOffset = document.documentElement.clientHeight / 2 / size - 3;
+let topOffset = Math.floor(
+  document.documentElement.clientHeight / 2 / size - 3
+);
 
 let hour = 0;
 let min = 0;
